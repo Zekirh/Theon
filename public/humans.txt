@@ -1,0 +1,15 @@
+/* Causality Studios — humans.txt */
+
+/* TEAM */
+Developer: Richmond C.U
+Role: Lead developer / founder
+Site: Causality Studios
+
+/* THANKS */
+Built with Vite, React, TypeScript, Tailwind CSS, and framer-motion.
+
+/* SITE */
+Last update: 2025
+Language: English
+Standards: HTML5, CSS3, ES2020+
+

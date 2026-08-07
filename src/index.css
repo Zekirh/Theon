@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ————————————————————————————————————————————
+   Causality Studios — "The Dark Instrument"
+   Carbon black / warm bone / solar amber /
+   azure signal / pulse green / ember alerts.
+   ———————————————————————————————————————————— */
+
+@layer base {
+  :root {
+    --background: 225 17% 5%;
+    --foreground: 44 24% 91%;
+
+    --card: 222 18% 9%;
+    --card-foreground: 44 24% 91%;
+
+    --popover: 222 18% 9%;
+    --popover-foreground: 44 24% 91%;
+
+    --primary: 36 100% 58%;
+    --primary-foreground: 225 17% 5%;
+
+    --secondary: 220 16% 12%;
+    --secondary-foreground: 44 24% 91%;
+
+    --muted: 220 16% 12%;
+    --muted-foreground: 44 10% 62%;
+
+    --accent: 36 100% 58%;
+    --accent-foreground: 225 17% 5%;
+
+    --destructive: 12 100% 60%;
+    --destructive-foreground: 44 24% 91%;
+
+    --border: 222 12% 16%;
+    --input: 222 12% 16%;
+    --ring: 36 100% 58%;
+
+    --radius: 1rem;
+
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-carbon font-sans text-bone;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #ffa928;
+    color: #0a0b0e;
+  }
+
+  select option {
+    background-color: #12141a;
+    color: #edeae2;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0b0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(237, 234, 226, 0.16);
+    border-radius: 999px;
+    border: 2px solid #0a0b0e;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(237, 234, 226, 0.28);
+  }
+
+  /* Lenis smooth-scroll recommended base */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* Layout shell */
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 md:px-8;
+  }
+
+  /* Blueprint grids */
+  .bp-grid {
+    background-image: linear-gradient(rgba(237, 234, 226, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(237, 234, 226, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bp-grid-ink {
+    background-image: linear-gradient(rgba(10, 11, 14, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 11, 14, 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bp-fade {
+    -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 22%, black 25%, transparent 78%);
+    mask-image: radial-gradient(ellipse 90% 75% at 50% 22%, black 25%, transparent 78%);
+  }
+
+  /* Outlined display text */
+  .text-stroke-bone {
+    -webkit-text-stroke: 1.5px rgba(237, 234, 226, 0.34);
+    color: transparent;
+  }
+  .text-stroke-bone-soft {
+    -webkit-text-stroke: 1.5px rgba(237, 234, 226, 0.16);
+    color: transparent;
+  }
+  .text-stroke-carbon {
+    -webkit-text-stroke: 1.5px rgba(10, 11, 14, 0.32);
+    color: transparent;
+  }
+
+  /* Serif-italic accent words inside display headlines */
+  .hl-serif {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.02em;
+    letter-spacing: -0.01em;
+    color: #ffa928;
+    padding-right: 0.07em;
+  }
+
+  /* Film-grain noise for panels */
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+  }
+
+  /* Pointer-tracked glow cards */
+  .glow-card {
+    position: relative;
+    border-radius: 1.25rem;
+    background: #12141a;
+    border: 1px solid rgba(237, 234, 226, 0.1);
+  }
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    padding: 1px;
+    background: radial-gradient(
+      260px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 169, 40, 0.85),
+      rgba(77, 157, 255, 0.35) 45%,
+      transparent 72%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 169, 40, 0.07),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .glow-card:hover::before,
+  .glow-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Marquee */
+  .marquee-track {
+    animation: marquee var(--marquee-duration, 26s) linear infinite;
+    will-change: transform;
+  }
+  .marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  /* Cause → effect ripple rings */
+  .ripple-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 169, 40, 0.4);
+    animation: ripple 4.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    will-change: transform, opacity;
+  }
+  .ripple-ring-azure {
+    border-color: rgba(77, 157, 255, 0.42);
+  }
+  .ripple-ring-pulse {
+    border-color: rgba(85, 230, 160, 0.48);
+  }
+
+  /* Traveling pulse dot along dashed connectors */
+  .travel-dot {
+    animation: travel 3.6s ease-in-out infinite;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.18);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.06);
+    opacity: 0;
+  }
+}
+
+@keyframes travel {
+  0% {
+    left: 3%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 97%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .ripple-ring,
+  .travel-dot,
+  .animate-float-slow,
+  .animate-beam,
+  .animate-blink {
+    animation: none !important;
+  }
+}
