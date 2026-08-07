@@ -32,8 +32,8 @@ const PILLARS: TagCardItem[] = [
 export default function AboutPage() {
   return (
     <PageShell
-      title="About • Causality Studios"
-      description="Causality Studios is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution."
+      title="About • Codecraft"
+      description="Codecraft is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution."
       path="/about"
       jsonLd={organizationJsonLd()}
     >
@@ -42,7 +42,7 @@ export default function AboutPage() {
           { text: "A brand built on talent, resilience, and the will to" },
           { text: "force change.", className: "hl-serif" },
         ]}
-        lead="Causality exists to provoke results in an ever-growing business world — building digital presence, designing for growth, and solving the operational problems that hold teams back."
+        lead="Codecraft exists to provoke results in an ever-growing business world — building digital presence, designing for growth, and solving the operational problems that hold teams back."
         actions={
           <>
             <Btn to="/services" variant="primary" size="lg">
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 </span>
               </span>
               <span className="mt-4 block">
-                Causality is led by{" "}
+                Codecraft is led by{" "}
                 <strong className="font-semibold text-bone">
                   Richmond C.U
                 </strong>{" "}
@@ -129,7 +129,7 @@ export default function AboutPage() {
 
       <div className="pt-20 md:pt-28">
         <CTASection
-          title="Want Causality on your side?"
+          title="Want Codecraft on your side?"
           description="Let’s define your goal, then build the system that gets you there."
           secondary={{ label: "Explore Solutions", to: "/solutions" }}
           primary={{ label: "Contact", to: "/contact" }}

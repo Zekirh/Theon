@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
 ] as const;
 
 const MARQUEE_WORDS = [
-  { text: "Causality", outline: false },
+  { text: "Codecraft", outline: false },
   { text: "We Force Change", outline: true },
   { text: "Built to Scale", outline: false },
   { text: "Design for Growth", outline: true },
@@ -32,18 +32,23 @@ export default function Footer() {
           <div>
             <div className="flex items-baseline gap-2">
               <span className="font-display text-xl font-bold tracking-tight text-bone">
-                Causality<span className="text-solar">.</span>
+                Codecraft<span className="text-solar">.</span>
               </span>
-              <span className="font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40">/ Studios</span>
+              <span className="font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40">
+                / Studios
+              </span>
             </div>
             <p className="mt-7 max-w-md font-display text-[1.6rem] font-medium leading-snug tracking-[-0.01em] text-bone">
-              We build to scale. We design for growth. We <span className="hl-serif">force change.</span>
+              We build to scale. We design for growth. We{" "}
+              <span className="hl-serif">force change.</span>
             </p>
           </div>
 
           {/* Index */}
           <div>
-            <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-bone/40">Index</p>
+            <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-bone/40">
+              Index
+            </p>
             <ul className="mt-5 space-y-3.5">
               {FOOTER_LINKS.map((link, i) => (
                 <li key={link.to}>
@@ -63,7 +68,9 @@ export default function Footer() {
 
           {/* Signal */}
           <div>
-            <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-bone/40">Signal</p>
+            <p className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-bone/40">
+              Signal
+            </p>
             <Link
               to="/contact"
               className="group mt-5 inline-flex items-center gap-3 font-display text-2xl font-semibold tracking-tight text-bone transition-colors duration-300 hover:text-solar"
@@ -109,7 +116,7 @@ export default function Footer() {
 
         {/* Small print */}
         <div className="shell flex flex-col gap-3 py-7 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-bone/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Causality — We Force Change</p>
+          <p>© {year} Codecraft — We Force Change</p>
           <p className="flex items-center gap-2">
             SYS.Status —<span className="text-pulse">Operational</span>
             <span className="animate-blink size-1.5 rounded-full bg-pulse" />

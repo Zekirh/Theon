@@ -1,12 +1,12 @@
-# Vercel + GitHub Deployment Steps
+# Codecraft Rebrand + Deploy Steps
 
-- [x] Analyze project structure & requirements
-- [x] Create `vercel.json` with SPA rewrite rule
-- [x] Create `.nvmrc` pinning Node 22
-- [x] Install Vercel CLI globally
-- [x] Deploy to Vercel (aliased to https://causality-studios.vercel.app)
-- [x] Verify deployment (URL live, routes work)
-- [x] Create isolated git repo in project dir (avoid home-dir repo)
-- [x] Commit project files (110 files)
-- [x] Push to https://github.com/Zekirh/codecraft.git (main) — pushed successfully
-- [ ] Connect repo to Vercel for auto-deploys (optional)
+- [x] Analyze scope of "Causality" references
+
+- [x] Update `index.html` (title, meta, canonical, og:site_name)
+- [x] Update `public/humans.txt`, `public/robots.txt`, `public/sitemap.xml`
+- [x] Update `Nav.tsx`, `Footer.tsx`, `IntroLoader.tsx`
+- [x] Update `index.css`, `lib/motion.ts` comments
+- [x] Update pages (`HomePage`, `ServicesPage`, `SolutionsPage`, `AboutPage`, `ContactPage`, `NotFound`)
+- [ ] Build & verify
+- [ ] Commit & push to GitHub
+- [ ] Redeploy to Vercel (alias `codecraft.vercel.app`)

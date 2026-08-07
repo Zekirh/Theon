@@ -68,9 +68,13 @@ export default function Nav() {
           )}
         >
           {/* Brand */}
-          <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
+          <Link
+            to="/"
+            className="group flex items-baseline gap-2"
+            onClick={() => setOpen(false)}
+          >
             <span className="font-display text-[1.15rem] font-bold tracking-tight text-bone transition-colors duration-300 group-hover:text-solar">
-              Causality<span className="text-solar">.</span>
+              Codecraft<span className="text-solar">.</span>
             </span>
             <span className="hidden font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40 sm:inline">
               / Studios
@@ -78,7 +82,10 @@ export default function Nav() {
           </Link>
 
           {/* Desktop links */}
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Primary"
+          >
             {LINKS.map((link) => {
               const active = location.pathname === link.to;
               return (
@@ -146,16 +153,32 @@ export default function Nav() {
             transition={{ duration: 0.6, ease: EASE_INOUT }}
           >
             <div className="bp-grid absolute inset-0" aria-hidden />
-            <nav className="shell relative z-10 mt-32 flex-1 overflow-y-auto" aria-label="Mobile">
+            <nav
+              className="shell relative z-10 mt-32 flex-1 overflow-y-auto"
+              aria-label="Mobile"
+            >
               <ul>
                 {LINKS.map((link, i) => {
                   const active = location.pathname === link.to;
                   return (
-                    <li key={link.to} className="overflow-hidden border-b border-bone/10">
+                    <li
+                      key={link.to}
+                      className="overflow-hidden border-b border-bone/10"
+                    >
                       <motion.div
                         initial={{ y: "105%" }}
-                        animate={{ y: 0, transition: { delay: 0.22 + i * 0.06, duration: 0.7, ease: EASE_OUT } }}
-                        exit={{ y: "105%", transition: { duration: 0.25, ease: EASE_INOUT } }}
+                        animate={{
+                          y: 0,
+                          transition: {
+                            delay: 0.22 + i * 0.06,
+                            duration: 0.7,
+                            ease: EASE_OUT,
+                          },
+                        }}
+                        exit={{
+                          y: "105%",
+                          transition: { duration: 0.25, ease: EASE_INOUT },
+                        }}
                       >
                         <Link
                           to={link.to}
@@ -163,11 +186,15 @@ export default function Nav() {
                           className="group flex items-center justify-between py-4"
                         >
                           <span className="flex items-baseline gap-5">
-                            <span className="font-mono text-[0.62rem] text-solar">0{i + 1}</span>
+                            <span className="font-mono text-[0.62rem] text-solar">
+                              0{i + 1}
+                            </span>
                             <span
                               className={cn(
                                 "font-display text-[clamp(2.1rem,8.5vw,3.4rem)] font-bold uppercase leading-none tracking-tight transition-colors duration-300",
-                                active ? "text-solar" : "text-bone group-hover:text-solar",
+                                active
+                                  ? "text-solar"
+                                  : "text-bone group-hover:text-solar",
                               )}
                             >
                               {link.label}
@@ -184,7 +211,10 @@ export default function Nav() {
             <motion.div
               className="shell relative z-10 flex items-center justify-between pb-9 pt-6"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { delay: 0.55, duration: 0.5 } }}
+              animate={{
+                opacity: 1,
+                transition: { delay: 0.55, duration: 0.5 },
+              }}
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
             >
               <p className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-bone/45">

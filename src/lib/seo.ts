@@ -6,28 +6,28 @@
  * data point at the real, indexable origin.
  */
 
-export const SITE_URL = "https://causality-studios.vercel.app";
+export const SITE_URL = "https://codecraft.vercel.app";
 
-export const SITE_NAME = "Causality Studios";
+export const SITE_NAME = "Codecraft";
 
-export const SITE_TITLE = "Causality • We Force Change";
+export const SITE_TITLE = "Codecraft • We Force Change";
 
 export const SITE_DESCRIPTION =
-  "Causality provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change.";
+  "Codecraft provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change.";
 
 export const SITE_IMAGE = `${SITE_URL}/icon.png`;
 
 /** Per-page default descriptions (used when a page omits its own). */
 export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "/": SITE_DESCRIPTION,
-  "/services":
-    "Causality services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale.",
+"/services":
+    "Codecraft services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale.",
   "/solutions":
-    "Causality solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results.",
+    "Codecraft solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results.",
   "/about":
-    "Causality Studios is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution.",
+    "Codecraft is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution.",
   "/contact":
-    "Start a project with Causality. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path.",
+    "Start a project with Codecraft. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -39,8 +39,8 @@ type JsonLd = Record<string, unknown>;
 export const websiteJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: SITE_NAME,
-  alternateName: "Causality",
+name: SITE_NAME,
+  alternateName: "Codecraft",
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: "en",
@@ -55,8 +55,8 @@ export const websiteJsonLd = (): JsonLd => ({
 export const organizationJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: SITE_NAME,
-  alternateName: "Causality",
+name: SITE_NAME,
+  alternateName: "Codecraft",
   url: SITE_URL,
   logo: `${SITE_URL}/icon.png`,
   description: SITE_DESCRIPTION,
@@ -101,12 +101,13 @@ export const itemListJsonLd = (items: { name: string; description: string }[]): 
   })),
 });
 
+
 export const contactPageJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: "Contact Causality",
+  name: "Contact Codecraft",
   url: `${SITE_URL}/contact`,
-  description: "Start a project with Causality Studios.",
+  description: "Start a project with Codecraft.",
   about: {
     "@type": "Organization",
     name: SITE_NAME,

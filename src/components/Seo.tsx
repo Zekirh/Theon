@@ -9,7 +9,7 @@ import {
 } from "@/lib/seo";
 
 interface SeoProps {
-  /** Full title, e.g. "Services • Causality Studios". Defaults to the site title. */
+  /** Full title, e.g. "Services • Codecraft". Defaults to the site title. */
   title?: string;
   /** Meta description. Defaults to the site-wide description. */
   description?: string;

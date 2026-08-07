@@ -13,5 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://causality-studios.vercel.app/sitemap.xml
-
+Sitemap: https://codecraft.vercel.app/sitemap.xml

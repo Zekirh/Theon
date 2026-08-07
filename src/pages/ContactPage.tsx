@@ -149,8 +149,8 @@ export default function ContactPage() {
 
   return (
     <PageShell
-      title="Contact • Causality Studios"
-      description="Start a project with Causality. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path."
+      title="Contact • Codecraft"
+      description="Start a project with Codecraft. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path."
       path="/contact"
       jsonLd={contactPageJsonLd()}
     >
