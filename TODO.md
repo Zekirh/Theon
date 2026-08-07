@@ -8,5 +8,5 @@
 - [x] Verify deployment (URL live, routes work)
 - [x] Create isolated git repo in project dir (avoid home-dir repo)
 - [x] Commit project files (110 files)
-- [ ] Push to https://github.com/Zekirh/codecraft.git (main) — BLOCKED: "Repository not found"
+- [x] Push to https://github.com/Zekirh/codecraft.git (main) — pushed successfully
 - [ ] Connect repo to Vercel for auto-deploys (optional)
