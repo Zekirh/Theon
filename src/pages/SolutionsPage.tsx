@@ -91,8 +91,8 @@ const GROWTH_STEPS = [
 export default function SolutionsPage() {
   return (
     <PageShell
-      title="Solutions • Codecraft"
-      description="Codecraft solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results."
+      title="Solutions • Forgepoint"
+      description="Forgepoint solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results."
       path="/solutions"
       jsonLd={itemListJsonLd(
         SOLUTION_CARDS.map((card) => ({
@@ -106,7 +106,7 @@ export default function SolutionsPage() {
           { text: "Systems that remove friction — and" },
           { text: "provoke results.", className: "hl-serif" },
         ]}
-        lead="Codecraft helps businesses solve operational and management issues using clear UX, reliable data, and scalable implementation."
+        lead="Forgepoint helps businesses solve operational and management issues using clear UX, reliable data, and scalable implementation."
         actions={
           <>
             <Btn to="/contact" variant="primary" size="lg">

@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
 ] as const;
 
 const MARQUEE_WORDS = [
-  { text: "Codecraft", outline: false },
+  { text: "Forgepoint", outline: false },
   { text: "We Force Change", outline: true },
   { text: "Built to Scale", outline: false },
   { text: "Design for Growth", outline: true },
@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <div className="flex items-baseline gap-2">
               <span className="font-display text-xl font-bold tracking-tight text-bone">
-                Codecraft<span className="text-solar">.</span>
+                Forgepoint<span className="text-solar">.</span>
               </span>
               <span className="font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40">
                 / Studios
@@ -116,7 +116,7 @@ export default function Footer() {
 
         {/* Small print */}
         <div className="shell flex flex-col gap-3 py-7 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-bone/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Codecraft — We Force Change</p>
+          <p>© {year} Forgepoint — We Force Change</p>
           <p className="flex items-center gap-2">
             SYS.Status —<span className="text-pulse">Operational</span>
             <span className="animate-blink size-1.5 rounded-full bg-pulse" />

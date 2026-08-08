@@ -197,8 +197,8 @@ function ServiceAccordion() {
 export default function ServicesPage() {
   return (
     <PageShell
-      title="Services • Codecraft"
-      description="Codecraft services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale."
+      title="Services • Forgepoint"
+      description="Forgepoint services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale."
       path="/services"
       jsonLd={itemListJsonLd(
         SERVICES.map((service) => ({
@@ -273,7 +273,7 @@ export default function ServicesPage() {
           title="Let’s map the cause → effect."
           description="Share your goals and current constraints. We’ll respond with a plan, timeline, and the best path to scale."
           secondary={{ label: "Browse Solutions", to: "/solutions" }}
-          primary={{ label: "Contact Codecraft", to: "/contact" }}
+          primary={{ label: "Contact Forgepoint", to: "/contact" }}
         />
       </div>
     </PageShell>

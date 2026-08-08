@@ -73,7 +73,7 @@ export default function IntroLoader({ onReveal, onDone }: IntroLoaderProps) {
           </span>
         </div>
         <p className="mt-7 text-center font-mono text-[0.62rem] uppercase tracking-[0.26em] text-bone/60">
-          <ScrambleText text="CODECRAFT // STUDIOS" duration={1150} />
+          <ScrambleText text="FORGEPOINT // STUDIOS" duration={1150} />
         </p>
       </div>
 

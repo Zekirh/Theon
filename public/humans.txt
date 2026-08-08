@@ -1,14 +1,14 @@
-/* Codecraft — humans.txt */
+/* Forgepoint — humans.txt */
 
 /* TEAM */
 Developer: Richmond C.U
 Role: Lead developer / founder
-Site: Codecraft
+Site: Forgepoint
 
 /* THANKS */
 Built with Vite, React, TypeScript, Tailwind CSS, and framer-motion.
 
 /* SITE */
-Last update: 2025
+Last update: 2026
 Language: English
 Standards: HTML5, CSS3, ES2020+

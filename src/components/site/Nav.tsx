@@ -74,7 +74,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
           >
             <span className="font-display text-[1.15rem] font-bold tracking-tight text-bone transition-colors duration-300 group-hover:text-solar">
-              Codecraft<span className="text-solar">.</span>
+              Forgepoint<span className="text-solar">.</span>
             </span>
             <span className="hidden font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40 sm:inline">
               / Studios

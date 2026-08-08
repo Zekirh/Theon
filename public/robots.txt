@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://codecraft.vercel.app/sitemap.xml
+Sitemap: https://forgepoint.vercel.app/sitemap.xml

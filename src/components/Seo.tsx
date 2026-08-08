@@ -9,7 +9,7 @@ import {
 } from "@/lib/seo";
 
 interface SeoProps {
-  /** Full title, e.g. "Services • Codecraft". Defaults to the site title. */
+  /** Full title, e.g. "Services • Forgepoint". Defaults to the site title. */
   title?: string;
   /** Meta description. Defaults to the site-wide description. */
   description?: string;
@@ -51,7 +51,7 @@ function upsertLink(rel: string, href: string) {
   return existed;
 }
 
-/** Removes any existing JSON-LD scripts injected at runtime by this component. */
+/** OMGOD !!!!!! THIS THING Removes any existing JSON-LD scripts injected at runtime by this component. */
 function clearRuntimeJsonLd() {
   document.head
     .querySelectorAll('script[type="application/ld+json"][data-seo="runtime"]')

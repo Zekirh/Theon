@@ -107,8 +107,8 @@ function ModelShape({
 export default function HomePage() {
   return (
     <PageShell
-      title="Codecraft • We Force Change"
-      description="Codecraft provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change."
+      title="Forgepoint • We Force Change"
+      description="Forgepoint provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change."
       path="/"
       jsonLd={[professionalServiceJsonLd(), websiteJsonLd()]}
     >
@@ -119,7 +119,7 @@ export default function HomePage() {
           { text: "force change", className: "hl-serif" },
           { text: "for every growing business." },
         ]}
-        lead="Codecraft provides end-to-end digital solutions — from responsive web experiences to scalable databases, hosting, and operational systems that keep teams moving… Forcing Change. We believe that change responds to actions. Visions are only hopes yet to be realised. We introduce the force that brings the vision about."
+        lead="Forgepoint provides end-to-end digital solutions — from responsive web experiences to scalable databases, hosting, and operational systems that keep teams moving… Forcing Change. We believe that change responds to actions. Visions are only hopes yet to be realised. We introduce the force that brings the vision about."
         actions={
           <>
             <Btn to="/services" variant="primary" size="lg">
@@ -184,11 +184,11 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* SEC.01 — Codecraft model */}
+      {/* SEC.01 — Forgepoint model */}
       <section className="shell py-20 md:py-28">
         <SectionHeading
           index="01"
-          code="CODECRAFT MODEL"
+          code="FORGEPOINT MODEL"
           segments={[
             { text: "Cause. Effect." },
             { text: "Momentum.", className: "hl-serif" },
@@ -292,7 +292,7 @@ export default function HomePage() {
         title="Ready to provoke results?"
         description="Tell us what you’re building — and what’s currently slowing your business down."
         secondary={{ label: "See Solutions", to: "/solutions" }}
-        primary={{ label: "Contact Codecraft", to: "/contact" }}
+        primary={{ label: "Contact Forgepoint", to: "/contact" }}
       />
     </PageShell>
   );
