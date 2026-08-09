@@ -19,3 +19,4 @@
 - [x] Wire contact form to Firestore (contact_submissions)
 - [x] Remove "front-end only" text; add sending/error/success states
 - [x] Build passes with Firebase integration
+- [x] Deploy to Vercel production (forgepoint-lyart.vercel.app)
