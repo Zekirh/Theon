@@ -10,6 +10,8 @@ import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EASE_OUT } from "@/lib/motion";
 import { contactPageJsonLd } from "@/lib/seo";
+import { app } from "@/lib/firebase";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import PageShell from "@/components/site/PageShell";
 import Btn from "@/components/fx/Btn";
 import Cross from "@/components/fx/Cross";
@@ -26,7 +28,7 @@ interface FormValues {
 }
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
-type FormStatus = "idle" | "error" | "sent";
+type FormStatus = "idle" | "sending" | "error" | "sent";
 
 const EMPTY_VALUES: FormValues = {
   name: "",
@@ -131,7 +133,7 @@ export default function ContactPage() {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (hasErrors) {
       setTouched({ name: true, email: true, focus: true, message: true });
@@ -142,9 +144,24 @@ export default function ContactPage() {
       });
       return;
     }
-    setValues(EMPTY_VALUES);
-    setTouched(EMPTY_TOUCHED);
-    setStatus("sent");
+
+    setStatus("sending");
+    try {
+      const db = getFirestore(app);
+      await addDoc(collection(db, "contact_submissions"), {
+        name: values.name.trim(),
+        email: values.email.trim(),
+        focus: values.focus,
+        message: values.message.trim(),
+        createdAt: new Date().toISOString(),
+      });
+      setValues(EMPTY_VALUES);
+      setTouched(EMPTY_TOUCHED);
+      setStatus("sent");
+    } catch (err) {
+      console.error("Failed to submit contact form:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -334,22 +351,24 @@ export default function ContactPage() {
                   />
                 </Field>
 
-                <Btn type="submit" variant="primary" size="lg" full>
-                  Send message
+                <Btn
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  full
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Sending…" : "Send message"}
                 </Btn>
-
-                <p className="text-center text-[0.78rem] leading-relaxed text-bone/40">
-                  This form is currently front-end only. When you’re ready, we
-                  can connect it to email, WhatsApp, or your CRM.
-                </p>
 
                 <p
                   aria-live="polite"
                   className="min-h-5 text-center font-mono text-[0.62rem] uppercase tracking-[0.18em]"
                 >
-                  {status === "error" && (
+                  {status === "error" && !hasErrors && (
                     <span className="text-ember">
-                      Please complete the required fields as prompted.
+                      Something went wrong sending your message. Please try
+                      again.
                     </span>
                   )}
                 </p>
@@ -390,7 +409,8 @@ export default function ContactPage() {
                         Message prepared.
                       </h3>
                       <p className="mt-2 max-w-xs text-[0.88rem] leading-relaxed text-bone/55">
-                        Connect this form to email/CRM when ready.
+                        We’ve got your message — we’ll reply with next steps,
+                        timeline, and a scale path.
                       </p>
                     </div>
                     <Btn

@@ -20,13 +20,16 @@ interface BtnProps {
   className?: string;
   full?: boolean;
   arrow?: boolean;
+  disabled?: boolean;
 }
 
 const VARIANT_CLASSES: Record<BtnVariant, string> = {
   primary: "bg-solar text-carbon hover:bg-bone",
-  ghost: "border border-bone/20 bg-transparent text-bone hover:border-solar hover:text-solar",
+  ghost:
+    "border border-bone/20 bg-transparent text-bone hover:border-solar hover:text-solar",
   invert: "bg-carbon text-bone hover:bg-solar hover:text-carbon",
-  invertGhost: "border border-carbon/30 bg-transparent text-carbon hover:bg-carbon hover:text-bone",
+  invertGhost:
+    "border border-carbon/30 bg-transparent text-carbon hover:bg-carbon hover:text-bone",
 };
 
 const DOT_CLASSES: Record<BtnVariant, string> = {
@@ -53,12 +56,14 @@ export default function Btn({
   className,
   full = false,
   arrow = true,
+  disabled = false,
 }: BtnProps) {
   const classes = cn(
     "group relative inline-flex select-none items-center justify-center gap-2.5 whitespace-nowrap rounded-full font-mono uppercase tracking-[0.16em] transition-colors duration-300 active:scale-[0.98]",
     VARIANT_CLASSES[variant],
     SIZE_CLASSES[size],
     full && "w-full",
+    disabled && "cursor-not-allowed opacity-50 saturate-0",
     className,
   );
 
@@ -83,7 +88,11 @@ export default function Btn({
   let element: ReactNode;
   if (to && to.startsWith("#")) {
     element = (
-      <button type="button" className={classes} onClick={() => scrollToId(to.slice(1))}>
+      <button
+        type="button"
+        className={classes}
+        onClick={() => scrollToId(to.slice(1))}
+      >
         {content}
       </button>
     );
@@ -95,11 +104,20 @@ export default function Btn({
     );
   } else {
     element = (
-      <button type={type} className={classes} onClick={onClick}>
+      <button
+        type={type}
+        className={classes}
+        onClick={onClick}
+        disabled={disabled}
+      >
         {content}
       </button>
     );
   }
 
-  return <Magnetic className={full ? "block w-full" : "inline-block"}>{element}</Magnetic>;
+  return (
+    <Magnetic className={full ? "block w-full" : "inline-block"}>
+      {element}
+    </Magnetic>
+  );
 }

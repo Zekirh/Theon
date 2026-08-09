@@ -14,3 +14,8 @@
 - [x] Deploy to Vercel (`vercel --prod --yes`)
 - [x] Verify live site (Forgepoint branding, routes work)
 - [x] Re-point deploy to `forgepoint` project so live URLs contain brand name
+- [x] Commit and push changes to GitHub (Zekirh/codecraft)
+- [x] Install & initialize Firebase (src/lib/firebase.ts)
+- [x] Wire contact form to Firestore (contact_submissions)
+- [x] Remove "front-end only" text; add sending/error/success states
+- [x] Build passes with Firebase integration
