@@ -24,12 +24,12 @@ interface BtnProps {
 }
 
 const VARIANT_CLASSES: Record<BtnVariant, string> = {
-  primary: "bg-solar text-carbon hover:bg-bone",
+  primary: "bg-solar text-carbon-ink hover:bg-bone",
   ghost:
     "border border-bone/20 bg-transparent text-bone hover:border-solar hover:text-solar",
-  invert: "bg-carbon text-bone hover:bg-solar hover:text-carbon",
+  invert: "bg-carbon text-bone hover:bg-solar hover:text-carbon-ink",
   invertGhost:
-    "border border-carbon/30 bg-transparent text-carbon hover:bg-carbon hover:text-bone",
+    "border border-carbon/30 bg-transparent text-carbon-ink hover:bg-carbon hover:text-bone",
 };
 
 const DOT_CLASSES: Record<BtnVariant, string> = {

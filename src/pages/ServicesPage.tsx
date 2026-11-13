@@ -131,7 +131,7 @@ function ServiceAccordion() {
                   className={cn(
                     "relative grid size-10 shrink-0 place-items-center rounded-full border transition-colors duration-300 md:size-11",
                     open
-                      ? "border-solar bg-solar text-carbon"
+                      ? "border-solar bg-solar text-carbon-ink"
                       : "border-bone/20 text-bone group-hover:border-bone/60",
                   )}
                 >
@@ -197,8 +197,8 @@ function ServiceAccordion() {
 export default function ServicesPage() {
   return (
     <PageShell
-      title="Services • Forgepoint"
-      description="Forgepoint services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale."
+      title="Services • Pantheon"
+      description="Pantheon services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale."
       path="/services"
       jsonLd={itemListJsonLd(
         SERVICES.map((service) => ({
@@ -273,7 +273,7 @@ export default function ServicesPage() {
           title="Let’s map the cause → effect."
           description="Share your goals and current constraints. We’ll respond with a plan, timeline, and the best path to scale."
           secondary={{ label: "Browse Solutions", to: "/solutions" }}
-          primary={{ label: "Contact Forgepoint", to: "/contact" }}
+          primary={{ label: "Contact Pantheon", to: "/contact" }}
         />
       </div>
     </PageShell>

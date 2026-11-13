@@ -1,9 +1,9 @@
-/* Forgepoint — humans.txt */
+/* Pantheon — humans.txt */
 
 /* TEAM */
 Developer: Richmond C.U
 Role: Lead developer / founder
-Site: Forgepoint
+Site: Pantheon
 
 /* THANKS */
 Built with Vite, React, TypeScript, Tailwind CSS, and framer-motion.

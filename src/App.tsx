@@ -2,6 +2,7 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "next-themes";
 
 import SmoothScroll from "@/components/fx/SmoothScroll";
 import Nav from "@/components/site/Nav";
@@ -50,8 +51,8 @@ const App = () => {
   const [phase, setPhase] = useState<IntroPhase>(initialPhase);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      <div>
         <SmoothScroll />
         {phase !== "intro" && (
           <>
@@ -62,8 +63,8 @@ const App = () => {
         {phase !== "done" && (
           <IntroLoader onReveal={() => setPhase("reveal")} onDone={() => setPhase("done")} />
         )}
-      </BrowserRouter>
-    </QueryClientProvider>
+      </div>
+    </ThemeProvider>
   );
 };
 

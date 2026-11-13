@@ -1,24 +1,59 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDVzrM-OOxgqRtbf2D2ZPpWnv9jhlNeMMo",
-  authDomain: "forgepoint-3e246.firebaseapp.com",
-  projectId: "forgepoint-3e246",
-  storageBucket: "forgepoint-3e246.firebasestorage.app",
-  messagingSenderId: "668961943697",
-  appId: "1:668961943697:web:aae313946ceacb8ce20f30",
-  measurementId: "G-H011N809J5",
-};
+const DEFAULT_FIREBASE_CONFIG = {
+  apiKey: "demo-api-key",
+  authDomain: "demo-project.firebaseapp.com",
+  projectId: "demo-project",
+  storageBucket: "demo-project.firebasestorage.app",
+  messagingSenderId: "000000000000",
+  appId: "1:000000000000:web:0000000000000000000000",
+  measurementId: "G-0000000000",
+} as const;
 
-// Initialize Firebase
+function readFirebaseEnv(key: string, fallback: string) {
+  const envValue =
+    import.meta.env[key] ??
+    import.meta.env[key.replace(/^VITE_/, "EXPO_PUBLIC_")] ??
+    import.meta.env[key.replace(/^EXPO_PUBLIC_/, "VITE_")];
+
+  if (typeof envValue === "string" && envValue.trim().length > 0) {
+    return envValue;
+  }
+
+  return fallback;
+}
+
+export function getFirebaseConfig() {
+  return {
+    apiKey: readFirebaseEnv("VITE_FIREBASE_API_KEY", DEFAULT_FIREBASE_CONFIG.apiKey),
+    authDomain: readFirebaseEnv(
+      "VITE_FIREBASE_AUTH_DOMAIN",
+      DEFAULT_FIREBASE_CONFIG.authDomain,
+    ),
+    projectId: readFirebaseEnv(
+      "VITE_FIREBASE_PROJECT_ID",
+      DEFAULT_FIREBASE_CONFIG.projectId,
+    ),
+    storageBucket: readFirebaseEnv(
+      "VITE_FIREBASE_STORAGE_BUCKET",
+      DEFAULT_FIREBASE_CONFIG.storageBucket,
+    ),
+    messagingSenderId: readFirebaseEnv(
+      "VITE_FIREBASE_MESSAGING_SENDER_ID",
+      DEFAULT_FIREBASE_CONFIG.messagingSenderId,
+    ),
+    appId: readFirebaseEnv("VITE_FIREBASE_APP_ID", DEFAULT_FIREBASE_CONFIG.appId),
+    measurementId: readFirebaseEnv(
+      "VITE_FIREBASE_MEASUREMENT_ID",
+      DEFAULT_FIREBASE_CONFIG.measurementId,
+    ),
+  };
+}
+
+const firebaseConfig = getFirebaseConfig();
 const app = initializeApp(firebaseConfig);
 
-// Analytics is only available in the browser (not SSR/build-time).
-// isSupported() guards against non-browser environments.
 let analytics: ReturnType<typeof getAnalytics> | null = null;
 if (typeof window !== "undefined") {
   isSupported().then((supported) => {

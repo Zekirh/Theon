@@ -6,14 +6,14 @@
  * data point at the real, indexable origin.
  */
 
-export const SITE_URL = "https://forgepoint.vercel.app";
+export const SITE_URL = "https://pantheon.vercel.app";
 
-export const SITE_NAME = "Forgepoint";
+export const SITE_NAME = "Pantheon";
 
-export const SITE_TITLE = "Forgepoint • We Force Change";
+export const SITE_TITLE = "Pantheon ~ We Force Change";
 
 export const SITE_DESCRIPTION =
-  "Forgepoint provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change.";
+  "Pantheon provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change.";
 
 export const SITE_IMAGE = `${SITE_URL}/icon.png`;
 
@@ -21,13 +21,13 @@ export const SITE_IMAGE = `${SITE_URL}/icon.png`;
 export const PAGE_DESCRIPTIONS: Record<string, string> = {
   "/": SITE_DESCRIPTION,
   "/services":
-    "Forgepoint services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale.",
+    "Pantheon services: frontend development, UI/UX design, database management, hosting, deployment & maintenance. Full-stack support built to scale.",
   "/solutions":
-    "Forgepoint solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results.",
+    "Pantheon solutions: admin panels, dashboards, CRM tools, bookings, payments, inventory, growth pages and workflow automation that remove friction and provoke results.",
   "/about":
-    "Forgepoint is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution.",
+    "Pantheon is the embodiment of talent, skill, resilience, and the sheer will to force change. We build trust through execution.",
   "/contact":
-    "Start a project with Forgepoint. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path.",
+    "Start a project with Pantheon. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -40,7 +40,7 @@ export const websiteJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: SITE_NAME,
-  alternateName: "Forgepoint",
+  alternateName: "Pantheon",
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: "en",
@@ -56,13 +56,13 @@ export const organizationJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE_NAME,
-  alternateName: "Forgepoint",
+  alternateName: "Pantheon",
   url: SITE_URL,
   logo: `${SITE_URL}/icon.png`,
   description: SITE_DESCRIPTION,
   founder: {
     "@type": "Person",
-    name: "Richmond C.U",
+    name: "Phinehas",
   },
   knowsAbout: [
     "Frontend Development",
@@ -104,9 +104,9 @@ export const itemListJsonLd = (items: { name: string; description: string }[]): 
 export const contactPageJsonLd = (): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: "Contact Forgepoint",
+  name: "Contact Pantheon",
   url: `${SITE_URL}/contact`,
-  description: "Start a project with Forgepoint.",
+  description: "Start a project with Pantheon.",
   about: {
     "@type": "Organization",
     name: SITE_NAME,

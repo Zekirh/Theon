@@ -68,12 +68,12 @@ export default function IntroLoader({ onReveal, onDone }: IntroLoaderProps) {
         <div className="relative mx-auto grid size-28 place-items-center">
           <span className="ripple-ring" />
           <span className="ripple-ring" style={{ animationDelay: "1.5s" }} />
-          <span className="relative grid size-16 place-items-center rounded-2xl bg-solar font-display text-3xl font-bold text-carbon">
+          <span className="relative grid size-16 place-items-center rounded-2xl bg-solar font-display text-3xl font-bold text-carbon-ink">
             C
           </span>
         </div>
         <p className="mt-7 text-center font-mono text-[0.62rem] uppercase tracking-[0.26em] text-bone/60">
-          <ScrambleText text="FORGEPOINT // STUDIOS" duration={1150} />
+          <ScrambleText text="PANTHEON // STUDIOS" duration={1150} />
         </p>
       </div>
 

@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
 ] as const;
 
 const MARQUEE_WORDS = [
-  { text: "Forgepoint", outline: false },
+  { text: "Pantheon", outline: false },
   { text: "We Force Change", outline: true },
   { text: "Built to Scale", outline: false },
   { text: "Design for Growth", outline: true },
@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <div className="flex items-baseline gap-2">
               <span className="font-display text-xl font-bold tracking-tight text-bone">
-                Forgepoint<span className="text-solar">.</span>
+                Pantheon<span className="text-solar">.</span>
               </span>
               <span className="font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40">
                 / Studios
@@ -76,7 +76,7 @@ export default function Footer() {
               className="group mt-5 inline-flex items-center gap-3 font-display text-2xl font-semibold tracking-tight text-bone transition-colors duration-300 hover:text-solar"
             >
               Start a Project
-              <span className="grid size-9 place-items-center rounded-full border border-bone/25 transition-all duration-300 group-hover:border-solar group-hover:bg-solar group-hover:text-carbon">
+              <span className="grid size-9 place-items-center rounded-full border border-bone/25 transition-all duration-300 group-hover:border-solar group-hover:bg-solar group-hover:text-carbon-ink">
                 <ArrowUpRight className="size-4" strokeWidth={1.8} />
               </span>
             </Link>
@@ -116,7 +116,7 @@ export default function Footer() {
 
         {/* Small print */}
         <div className="shell flex flex-col gap-3 py-7 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-bone/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Forgepoint — We Force Change</p>
+          <p>© {year} Pantheon — We Force Change</p>
           <p className="flex items-center gap-2">
             SYS.Status —<span className="text-pulse">Operational</span>
             <span className="animate-blink size-1.5 rounded-full bg-pulse" />

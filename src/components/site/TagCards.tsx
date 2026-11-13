@@ -62,7 +62,7 @@ export default function TagCardGrid({ items }: TagCardGridProps) {
               <span className="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-bone/35">
                 Module / {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="grid size-9 place-items-center rounded-full border border-bone/15 text-bone transition-all duration-300 group-hover:border-solar group-hover:bg-solar group-hover:text-carbon">
+              <span className="grid size-9 place-items-center rounded-full border border-bone/15 text-bone transition-all duration-300 group-hover:border-solar group-hover:bg-solar group-hover:text-carbon-ink">
                 <ArrowUpRight className="size-4" strokeWidth={1.8} />
               </span>
             </div>

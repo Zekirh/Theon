@@ -107,8 +107,8 @@ function ModelShape({
 export default function HomePage() {
   return (
     <PageShell
-      title="Forgepoint • We Force Change"
-      description="Forgepoint provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change."
+      title="Pantheon • We Force Change"
+      description="Pantheon provides business-ready digital solutions: web experiences, scalable systems, database management, hosting, and growth-focused design. We build to scale. We force change."
       path="/"
       jsonLd={[professionalServiceJsonLd(), websiteJsonLd()]}
     >
@@ -119,7 +119,7 @@ export default function HomePage() {
           { text: "force change", className: "hl-serif" },
           { text: "for every growing business." },
         ]}
-        lead="Forgepoint provides end-to-end digital solutions — from responsive web experiences to scalable databases, hosting, and operational systems that keep teams moving… Forcing Change. We believe that change responds to actions. Visions are only hopes yet to be realised. We introduce the force that brings the vision about."
+        lead="Pantheon provides end-to-end digital solutions — from responsive web experiences to scalable databases, hosting, and operational systems that keep teams moving… Forcing Change. We believe that change responds to actions. Visions are only hopes yet to be realised. We introduce the force that brings the vision about."
         actions={
           <>
             <Btn to="/services" variant="primary" size="lg">
@@ -146,7 +146,7 @@ export default function HomePage() {
       />
 
       {/* Marquee strip — bright band on the dark canvas */}
-      <div className="bg-bone py-5 text-carbon md:py-6">
+      <div className="bg-bone py-5 text-carbon-ink md:py-6">
         <Marquee duration={32}>
           {MARQUEE_ITEMS.map((item, i) => (
             <span key={i} className="flex items-baseline">
@@ -154,13 +154,13 @@ export default function HomePage() {
                 className={
                   i % 2 === 1
                     ? "text-stroke-carbon whitespace-nowrap px-7 font-display text-xl font-bold uppercase tracking-tight md:text-2xl"
-                    : "whitespace-nowrap px-7 font-display text-xl font-bold uppercase tracking-tight text-carbon md:text-2xl"
+                    : "whitespace-nowrap px-7 font-display text-xl font-bold uppercase tracking-tight text-carbon-ink md:text-2xl"
                 }
               >
                 {item}
               </span>
               <span
-                className="font-serif text-lg italic leading-none text-carbon/40 md:text-xl"
+                className="font-serif text-lg italic leading-none text-carbon-ink/40 md:text-xl"
                 aria-hidden
               >
                 /
@@ -184,11 +184,11 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* SEC.01 — Forgepoint model */}
+      {/* SEC.01 — Pantheon model */}
       <section className="shell py-20 md:py-28">
         <SectionHeading
           index="01"
-          code="FORGEPOINT MODEL"
+          code="PANTHEON MODEL"
           segments={[
             { text: "Cause. Effect." },
             { text: "Momentum.", className: "hl-serif" },
@@ -211,7 +211,7 @@ export default function HomePage() {
                 <GlowCard className="group relative z-10 p-8">
                   {i < MODEL_NODES.length - 1 && (
                     <span
-                      className="absolute -right-[1.75rem] top-1/2 z-20 hidden size-9 -translate-y-1/2 place-items-center rounded-full bg-bone text-carbon shadow-lg md:grid"
+                      className="absolute -right-[1.75rem] top-1/2 z-20 hidden size-9 -translate-y-1/2 place-items-center rounded-full bg-bone text-carbon-ink shadow-lg md:grid"
                       aria-hidden
                     >
                       <MoveRight className="size-4" strokeWidth={1.8} />
@@ -292,7 +292,7 @@ export default function HomePage() {
         title="Ready to provoke results?"
         description="Tell us what you’re building — and what’s currently slowing your business down."
         secondary={{ label: "See Solutions", to: "/solutions" }}
-        primary={{ label: "Contact Forgepoint", to: "/contact" }}
+        primary={{ label: "Contact Pantheon", to: "/contact" }}
       />
     </PageShell>
   );

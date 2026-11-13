@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 /* ————————————————————————————————————————————
-Forgepoint — "The Dark Instrument"
+Pantheon — "The Dark Instrument" yes na 'dark intrument'
    Carbon black / warm bone / solar amber /
    azure signal / pulse green / ember alerts.
    ———————————————————————————————————————————— */
 
 @layer base {
   :root {
+    --color-carbon: 10 11 14;
+    --color-surface: 18 20 26;
+    --color-raised: 25 28 35;
+    --color-bone: 237 234 226;
+
     --background: 225 17% 5%;
     --foreground: 44 24% 91%;
 
@@ -43,18 +48,53 @@ Forgepoint — "The Dark Instrument"
     color-scheme: dark;
   }
 
+  :root.light {
+    --color-carbon: 246 245 240;
+    --color-surface: 255 255 255;
+    --color-raised: 237 235 229;
+    --color-bone: 27 29 34;
+
+    --background: 40 20% 96%;
+    --foreground: 225 17% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 17% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 17% 8%;
+
+    --primary-foreground: 225 17% 5%;
+
+    --secondary: 40 14% 91%;
+    --secondary-foreground: 225 17% 8%;
+
+    --muted: 40 14% 91%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent-foreground: 225 17% 5%;
+
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 9% 82%;
+    --input: 40 9% 82%;
+
+    color-scheme: light;
+  }
+
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   html {
-    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
     @apply bg-carbon font-sans text-bone;
     overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 
   ::selection {
@@ -63,23 +103,23 @@ Forgepoint — "The Dark Instrument"
   }
 
   select option {
-    background-color: #12141a;
-    color: #edeae2;
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
   }
 
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0b0e;
+    background: rgb(var(--color-carbon));
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(237, 234, 226, 0.16);
+    background: rgb(var(--color-bone) / 0.16);
     border-radius: 999px;
-    border: 2px solid #0a0b0e;
+    border: 2px solid rgb(var(--color-carbon));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(237, 234, 226, 0.28);
+    background: rgb(var(--color-bone) / 0.28);
   }
 
   /* Lenis smooth-scroll recommended base */
@@ -104,8 +144,8 @@ Forgepoint — "The Dark Instrument"
   /* Blueprint grids */
   .bp-grid {
     background-image:
-      linear-gradient(rgba(237, 234, 226, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(237, 234, 226, 0.05) 1px, transparent 1px);
+      linear-gradient(rgb(var(--color-bone) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--color-bone) / 0.05) 1px, transparent 1px);
     background-size: 56px 56px;
   }
   .bp-grid-ink {
@@ -129,11 +169,11 @@ Forgepoint — "The Dark Instrument"
 
   /* Outlined display text */
   .text-stroke-bone {
-    -webkit-text-stroke: 1.5px rgba(237, 234, 226, 0.34);
+    -webkit-text-stroke: 1.5px rgb(var(--color-bone) / 0.34);
     color: transparent;
   }
   .text-stroke-bone-soft {
-    -webkit-text-stroke: 1.5px rgba(237, 234, 226, 0.16);
+    -webkit-text-stroke: 1.5px rgb(var(--color-bone) / 0.16);
     color: transparent;
   }
   .text-stroke-carbon {
@@ -168,8 +208,8 @@ Forgepoint — "The Dark Instrument"
   .glow-card {
     position: relative;
     border-radius: 1.25rem;
-    background: #12141a;
-    border: 1px solid rgba(237, 234, 226, 0.1);
+    background: rgb(var(--color-surface));
+    border: 1px solid rgb(var(--color-bone) / 0.1);
   }
   .glow-card::before {
     content: "";
@@ -185,6 +225,9 @@ Forgepoint — "The Dark Instrument"
       transparent 72%
     );
     -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -240,6 +283,13 @@ Forgepoint — "The Dark Instrument"
   .travel-dot {
     animation: travel 3.6s ease-in-out infinite;
   }
+}
+
+@layer utilities {
+  :root.light .bg-bone {
+    background-color: rgb(var(--color-surface));
+  }
+
 }
 
 @keyframes marquee {

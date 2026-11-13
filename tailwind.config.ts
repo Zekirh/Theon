@@ -15,10 +15,11 @@ export default {
     },
     extend: {
       colors: {
-        carbon: "#0A0B0E",
-        surface: "#12141A",
-        raised: "#191C23",
-        bone: "#EDEAE2",
+        carbon: "rgb(var(--color-carbon) / <alpha-value>)",
+        "carbon-ink": "#0A0B0E",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        raised: "rgb(var(--color-raised) / <alpha-value>)",
+        bone: "rgb(var(--color-bone) / <alpha-value>)",
         solar: "#FFA928",
         azure: "#4D9DFF",
         pulse: "#55E6A0",

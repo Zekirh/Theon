@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 import { EASE_INOUT, EASE_OUT, SPRING_SNAPPY } from "@/lib/motion";
@@ -19,6 +20,8 @@ const LINKS = [
 /** Floating dark-glass navigation with animated active indicator + fullscreen mobile menu. */
 export default function Nav() {
   const location = useLocation();
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme !== "light";
   const [open, setOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -74,7 +77,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
           >
             <span className="font-display text-[1.15rem] font-bold tracking-tight text-bone transition-colors duration-300 group-hover:text-solar">
-              Forgepoint<span className="text-solar">.</span>
+              Pantheon<span className="text-solar">.</span>
             </span>
             <span className="hidden font-mono text-[0.56rem] uppercase tracking-[0.22em] text-bone/40 sm:inline">
               / Studios
@@ -95,7 +98,7 @@ export default function Nav() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "relative rounded-full px-4 py-2 font-mono text-[0.66rem] uppercase tracking-[0.16em] transition-colors duration-300",
-                    active ? "text-carbon" : "text-bone/65 hover:text-solar",
+                    active ? "text-carbon-ink" : "text-bone/65 hover:text-solar",
                   )}
                 >
                   {active && (
@@ -117,6 +120,16 @@ export default function Nav() {
                 Start a Project
               </Btn>
             </div>
+
+            <button
+              type="button"
+              className="grid size-10 place-items-center rounded-full border border-bone/15 bg-surface/80 text-bone transition-colors hover:border-solar hover:text-solar"
+              onClick={() => setTheme(isDark ? "light" : "dark")}
+              aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+              title={`Switch to ${isDark ? "light" : "dark"} theme`}
+            >
+              {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </button>
 
             {/* Burger */}
             <button

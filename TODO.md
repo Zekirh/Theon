@@ -1,4 +1,4 @@
-# Forgepoint Rebrand + Vercel Deploy Steps
+# Pantheon Rebrand + Vercel Deploy Steps
 
 - [x] Create `vercel.json` with SPA rewrite rule
 - [x] Create `.nvmrc` pinning Node 22
@@ -12,11 +12,11 @@
 - [x] Rebrand — Pages (`HomePage`, `ServicesPage`, `SolutionsPage`, `AboutPage`, `ContactPage`, `NotFound`)
 - [x] Verify build passes
 - [x] Deploy to Vercel (`vercel --prod --yes`)
-- [x] Verify live site (Forgepoint branding, routes work)
-- [x] Re-point deploy to `forgepoint` project so live URLs contain brand name
+- [x] Verify live site (Pantheon branding, routes work)
+- [x] Re-point deploy to `pantheon` project so live URLs contain brand name
 - [x] Commit and push changes to GitHub (Zekirh/codecraft)
 - [x] Install & initialize Firebase (src/lib/firebase.ts)
 - [x] Wire contact form to Firestore (contact_submissions)
 - [x] Remove "front-end only" text; add sending/error/success states
 - [x] Build passes with Firebase integration
-- [x] Deploy to Vercel production (forgepoint-lyart.vercel.app)
+- [x] Deploy to Vercel production (pantheon-lyart.vercel.app)

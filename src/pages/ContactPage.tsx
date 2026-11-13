@@ -166,8 +166,8 @@ export default function ContactPage() {
 
   return (
     <PageShell
-      title="Contact • Forgepoint"
-      description="Start a project with Forgepoint. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path."
+      title="Contact • Pantheon"
+      description="Start a project with Pantheon. Tell us what you’re building and what results you want — we’ll reply with next steps, timeline, and a scale path."
       path="/contact"
       jsonLd={contactPageJsonLd()}
     >
@@ -388,7 +388,7 @@ export default function ContactPage() {
                     <div className="relative grid size-28 place-items-center">
                       <CauseRipple tone="pulse" className="inset-0" rings={3} />
                       <motion.span
-                        className="relative grid size-16 place-items-center rounded-full bg-pulse text-carbon"
+                        className="relative grid size-16 place-items-center rounded-full bg-pulse text-carbon-ink"
                         initial={{ scale: 0, rotate: -30 }}
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{

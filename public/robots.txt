@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://forgepoint.vercel.app/sitemap.xml
+Sitemap: https://pantheon.vercel.app/sitemap.xml

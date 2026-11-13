@@ -32,17 +32,17 @@ const PILLARS: TagCardItem[] = [
 export default function AboutPage() {
   return (
     <PageShell
-      title="About • Forgepoint"
-      description="Forgepoint is led by Richmond C.U — talent, resilience, and the will to force change. We build trust through execution."
+      title="About Us"
+      description="Pantheon is the embodiment of talent, skill, resilience, and the will to force change. We build trust through execution."
       path="/about"
       jsonLd={organizationJsonLd()}
     >
       <PageHero
         segments={[
-          { text: "A brand built on talent, resilience, and the will to" },
+          { text: "A brand built on talent, resilience, and the sheer will to" },
           { text: "force change.", className: "hl-serif" },
         ]}
-        lead="Forgepoint exists to provoke results in an ever-growing business world — building digital presence, designing for growth, and solving the operational problems that hold teams back."
+        lead="Pantheon exists to provoke results in an ever-growing business world — building digital presence, designing for growth, and solving the operational problems that hold teams back."
         actions={
           <>
             <Btn to="/services" variant="primary" size="lg">
@@ -63,24 +63,24 @@ export default function AboutPage() {
           body: (
             <>
               <span className="flex items-center gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-solar font-display text-sm font-bold text-carbon">
-                  RC
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-solar font-display text-sm font-bold text-carbon-ink">
+                  P
                 </span>
                 <span className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-bone/50">
                   Lead team member / developer
                 </span>
               </span>
               <span className="mt-4 block">
-                Forgepoint is led by{" "}
+                Pantheon is led by{" "}
                 <strong className="font-semibold text-bone">
-                  Richmond C.U
+                  Phinehas
                 </strong>{" "}
                 — with a focus on quality delivery and long-term outcomes.
               </span>
             </>
           ),
           stats: [
-            { k: "Mindset", v: "Resilience • Ownership" },
+            { k: "Mindset", v: "Resilience • Security" },
             { k: "Standard", v: "Quality • Consistency" },
           ],
         }}
@@ -129,7 +129,7 @@ export default function AboutPage() {
 
       <div className="pt-20 md:pt-28">
         <CTASection
-          title="Want Forgepoint on your side?"
+          title="Want Pantheon on your side?"
           description="Let’s define your goal, then build the system that gets you there."
           secondary={{ label: "Explore Solutions", to: "/solutions" }}
           primary={{ label: "Contact", to: "/contact" }}
