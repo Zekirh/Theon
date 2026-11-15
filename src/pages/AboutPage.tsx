@@ -12,7 +12,7 @@ const PILLARS: TagCardItem[] = [
   {
     tag: "Talent",
     title: "Skill that shows in the details",
-    body: "Strong visuals, clean interfaces, and solid engineering choices that perform in the real world.",
+    body: "Strong visuals, clean interfaces, and solid engineering and security choices that perform in the real world.",
     accent: "azure",
   },
   {
@@ -42,7 +42,7 @@ export default function AboutPage() {
           { text: "A brand built on talent, resilience, and the sheer will to" },
           { text: "force change.", className: "hl-serif" },
         ]}
-        lead="Pantheon exists to provoke results in an ever-growing business world — building digital presence, designing for growth, and solving the operational problems that hold teams back."
+        lead="Pantheon exists to provoke results in an ever-growing business world — building digital presence, designing for growth, solving the operational problems that hold teams back, and identifying vulnerabilities as well as fixing gaps in system security."
         actions={
           <>
             <Btn to="/services" variant="primary" size="lg">
@@ -55,7 +55,7 @@ export default function AboutPage() {
         }
         meta={[
           { k: "Brand", v: "Business solutions • Built to scale" },
-          { k: "Core belief", v: "Every system can be improved" },
+          { k: "Core belief", v: "Every system can be improved, and well secured" },
         ]}
         panel={{
           code: "LEADERSHIP",
@@ -64,8 +64,8 @@ export default function AboutPage() {
             <>
               <span className="flex items-center gap-3">
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-solar font-display text-sm font-bold text-carbon-ink">
-                  P
-                </span>
+                   𝖕
+                </ span>
                 <span className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-bone/50">
                   Lead team member / developer
                 </span>

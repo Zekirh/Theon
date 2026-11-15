@@ -137,10 +137,10 @@ export default function HomePage() {
         panel={{
           code: "BUILT-TO-SCALE",
           title: "Built to Scale",
-          body: "Digital presence is only the beginning. We design for growth, build for resilience, and solve the management problems that slow businesses down.",
+          body: "Digital presence is only the beginning. We design for growth, build for resilience, and solve the management problems and system vulnerabilities that slow businesses down.",
           stats: [
-            { k: "Build", v: "Frontend • UI/UX • Performance" },
-            { k: "Run", v: "Database • Hosting • Support" },
+            { k: "Build", v: "Frontend • UI/UX • Performance • Pen-testing" },
+            { k: "Run", v: "Database • Hosting • Support • Vulnerability assessment" },
           ],
         }}
       />

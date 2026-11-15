@@ -54,6 +54,44 @@ export default function KineticHeadline({
     );
   }
 
+  if (mode === "inview") {
+    return (
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { delayChildren: delay, staggerChildren: stagger },
+          },
+        }}
+      >
+        <Tag className={className}>
+          {words.map((w, i) => (
+            <Fragment key={i}>
+              <span className="-mb-[0.12em] inline-block overflow-hidden pb-[0.12em] align-bottom">
+                <motion.span
+                  className={cn("inline-block will-change-transform", w.className)}
+                  variants={{
+                    hidden: { y: "115%", rotate: 2.2 },
+                    visible: {
+                      y: "0%",
+                      rotate: 0,
+                      transition: { duration: 0.9, ease: EASE_OUT },
+                    },
+                  }}
+                >
+                  {w.word}
+                </motion.span>
+              </span>{" "}
+            </Fragment>
+          ))}
+        </Tag>
+      </motion.div>
+    );
+  }
+
   return (
     <Tag className={className}>
       {words.map((w, i) => (
@@ -62,12 +100,7 @@ export default function KineticHeadline({
             <motion.span
               className={cn("inline-block will-change-transform", w.className)}
               initial={{ y: "115%", rotate: 2.2 }}
-              {...(mode === "mount"
-                ? { animate: { y: "0%", rotate: 0 } }
-                : {
-                    whileInView: { y: "0%", rotate: 0 },
-                    viewport: { once: true, margin: "0px 0px -8% 0px" },
-                  })}
+              animate={{ y: "0%", rotate: 0 }}
               transition={{ duration: 0.9, ease: EASE_OUT, delay: delay + i * stagger }}
             >
               {w.word}
