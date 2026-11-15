@@ -68,18 +68,38 @@ export default function IntroLoader({ onReveal, onDone }: IntroLoaderProps) {
         <div className="relative mx-auto grid size-28 place-items-center">
           <span className="ripple-ring" />
           <span className="ripple-ring" style={{ animationDelay: "1.5s" }} />
-          <span className="relative grid size-16 place-items-center rounded-2xl bg-solar font-display text-3xl font-bold text-carbon-ink">
-            C
-          </span>
+          <span className="relative grid size-16 place-items-center rounded-2xl bg-solar">
+  <svg
+    viewBox="0 0 160 160"
+    className="size-12 text-carbon-ink"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    aria-label="P"
+    role="img"
+  >
+    <path d="
+      M 20 10
+      Q 20 0 38 0
+      L 91 0
+      Q 150 0 150 54
+      Q 150 108 97 108
+      Q 78 108 76 91
+      Q 75 84 80 74
+      L 112 5
+      L 20 160
+      Z
+    " />
+  </svg>
+</span>
         </div>
-        <p className="mt-7 text-center font-mono text-[0.62rem] uppercase tracking-[0.26em] text-bone/60">
+        <p className="mt-7 text-center font-mono text-[0.7rem] uppercase tracking-[0.22em] text-bone/75">
           <ScrambleText text="PANTHEON // STUDIOS" duration={1150} />
         </p>
       </div>
 
       {/* Counter */}
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-7 md:px-10 md:pb-9">
-        <p className="mb-4 font-mono text-[0.6rem] uppercase tracking-[0.24em] text-bone/50">
+        <p className="mb-4 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-bone/70">
           Forcing change…
         </p>
         <span className="font-display text-[clamp(4rem,12vw,7.5rem)] font-bold leading-none tracking-tight tabular-nums">

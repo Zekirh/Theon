@@ -97,14 +97,14 @@ export default function Nav() {
                   to={link.to}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative rounded-full px-4 py-2 font-mono text-[0.66rem] uppercase tracking-[0.16em] transition-colors duration-300",
-                    active ? "text-carbon-ink" : "text-bone/65 hover:text-solar",
+                    "relative rounded-full px-4 py-2 font-mono text-[0.78rem] font-bold uppercase tracking-[0.12em] transition-colors duration-300",
+                    active ? "text-carbon-ink" : "text-bone/85 hover:text-solar",
                   )}
                 >
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-bone"
+                      className="absolute inset-0 rounded-full border border-solar/75 bg-bone"
                       transition={SPRING_SNAPPY}
                     />
                   )}
@@ -140,12 +140,18 @@ export default function Nav() {
               aria-label="Toggle navigation"
             >
               <motion.span
-                className="absolute block h-[1.5px] w-5 bg-bone"
+                className={cn(
+                  "absolute block h-[1.5px] w-5",
+                  isDark ? "bg-bone" : "bg-carbon-ink",
+                )}
                 animate={{ rotate: open ? 45 : 0, y: open ? 0 : -3.5 }}
                 transition={{ duration: 0.35, ease: EASE_OUT }}
               />
               <motion.span
-                className="absolute block h-[1.5px] w-5 bg-bone"
+                className={cn(
+                  "absolute block h-[1.5px] w-5",
+                  isDark ? "bg-bone" : "bg-carbon-ink",
+                )}
                 animate={{ rotate: open ? -45 : 0, y: open ? 0 : 3.5 }}
                 transition={{ duration: 0.35, ease: EASE_OUT }}
               />
@@ -167,8 +173,9 @@ export default function Nav() {
           >
             <div className="bp-grid absolute inset-0" aria-hidden />
             <nav
-              className="shell relative z-10 mt-32 flex-1 overflow-y-auto"
+              className="shell relative z-10 mt-32 min-h-0 flex-1 touch-pan-y overflow-y-auto overscroll-y-contain"
               aria-label="Mobile"
+              data-lenis-prevent
             >
               <ul>
                 {LINKS.map((link, i) => {
@@ -206,7 +213,7 @@ export default function Nav() {
                               className={cn(
                                 "font-display text-[clamp(2.1rem,8.5vw,3.4rem)] font-bold uppercase leading-none tracking-tight transition-colors duration-300",
                                 active
-                                  ? "text-solar"
+                                  ? "rounded-lg border border-solar/70 px-2.5 py-1 text-solar"
                                   : "text-bone group-hover:text-solar",
                               )}
                             >
